@@ -145,7 +145,7 @@ module.exports.load = async function(app, db) {
                     'Content-type': 'application/json',
                 },
                 body: params
-            }).catch(e => console.warn(chalk.red("[WEBSITE] There was an error sending to the webhook: " + e)));
+            }).catch(e => console.warn(chalk.red("[WEBSITE] Il y a une erreur avec votre webhook: " + e)));
         }
     });
 
@@ -258,7 +258,7 @@ module.exports.load = async function(app, db) {
                         'Content-type': 'application/json',
                     },
                     body: params
-                }).catch(e => console.warn(chalk.red("[WEBHOOK] There was an error sending a message to the webhook:\n" + e)))
+                }).catch(e => console.warn(chalk.red("[WEBHOOK] Il y a une erreur lors d'un envoi d'un message avec votre webhook:\n" + e)))
             }
             return res.redirect(successredirect + "?err=none");
         } else {
@@ -317,7 +317,7 @@ module.exports.load = async function(app, db) {
                         'Content-type': 'application/json',
                     },
                     body: params
-                }).catch(e => console.warn(chalk.red("[WEBHOOK] There was an error sending a message to the webhook:\n" + e)));
+                }).catch(e => console.warn(chalk.red("[WEBHOOK] Il y a une erreur lors d'un envoi d'un message avec votre webhook:\n" + e)));
             }
 
             return res.redirect(successredirect + "?err=none");
@@ -346,7 +346,7 @@ module.exports.load = async function(app, db) {
                         'Content-type': 'application/json',
                     },
                     body: params
-                }).catch(e => console.warn(chalk.red("[WEBHOOK] There was an error sending a message to the webhook:\n" + e)));
+                }).catch(e => console.warn(chalk.red("[WEBHOOK] Il y a une erreur lors d'un envoi avec votre webhook:\n" + e)));
             }
             return res.redirect(successredirect + "?err=none");
         }
@@ -563,7 +563,7 @@ module.exports.load = async function(app, db) {
                     'Content-type': 'application/json',
                 },
                 body: params
-            }).catch(e => console.warn(chalk.red("[WEBSITE] There was an error sending to the webhook: " + e)));
+            }).catch(e => console.warn(chalk.red("[WEBSITE] Il y a une erreur lors d'un envoi avec votre webhook: " + e)));
         }
     });
     
@@ -720,7 +720,7 @@ module.exports.load = async function(app, db) {
                     'Content-type': 'application/json',
                 },
                 body: params
-            }).catch(e => console.warn(chalk.red("[WEBSITE] There was an error sending to the webhook: " + e)));
+            }).catch(e => console.warn(chalk.red("[WEBSITE] Il y a une erreur lors d'un envoi avec votre webhook: " + e)));
         }
     });
 
@@ -807,7 +807,7 @@ module.exports.load = async function(app, db) {
                     'Content-type': 'application/json',
                 },
                 body: params
-            }).catch(e => console.warn(chalk.red("[WEBSITE] There was an error sending to the webhook: " + e)));
+            }).catch(e => console.warn(chalk.red("[WEBSITE] Il y a une erreur lors d'un envoi avec votre webhook: " + e)));
         }
     });
 
@@ -864,7 +864,7 @@ module.exports.load = async function(app, db) {
             }
           );
         if (await userinforeq.statusText == "Not Found") {
-            console.log("[WEBSITE] An error has occured while attempting to get a user's information");
+            console.log("[WEBSITE] Une erreur est survenue suite à la recherche de l'utilisateur.");
             console.log("- Discord ID: " + req.query.id);
             console.log("- Pterodactyl Panel ID: " + pterodactylid);
             return res.send({ status: "could not find user on panel" });
@@ -895,7 +895,7 @@ module.exports.load = async function(app, db) {
             if (err) {
                 console.log(`[WEBSITE] An error has occured on path ${req._parsedUrl.pathname}:`);
                 console.log(err);
-                return res.send("An error has occured while attempting to load this page. Please contact an administrator to fix this.");
+                return res.send("Une erreur à eu lieu lors du chargement. Merci de contacter un administrateur.");
             };
             res.status(404);
             res.send(str);
@@ -926,7 +926,7 @@ module.exports.load = async function(app, db) {
             }
           );
         if (await userinforeq.statusText == "Not Found") {
-            console.log("[WEBSITE] An error has occured while attempting to check if a user's server should be suspended.");
+            console.log("[WEBSITE] Une erreur à survenue lors de la recherche, le serveur de l'utilisateur est peut-être suspendu.");
             console.log("- Discord ID: " + discordid);
             console.log("- Pterodactyl Panel ID: " + pterodactylid);
             return;
