@@ -76,7 +76,7 @@ module.exports.load = async function(app, db) {
                     'Content-type': 'application/json',
                 },
                 body: params
-            }).catch(e => console.warn(chalk.red("[WEBSITE] There was an error sending to the webhook: " + e)));
+            }).catch(e => console.warn(chalk.red("[WEBSITE] Il y a une erreur lors d'une requête avec votre webhook: " + e)));
         }
     });
 
